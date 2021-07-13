@@ -49,11 +49,13 @@ export type Networks = Record<string, Network>;
 export const defaultNetworks: Networks = {
   mainnet: {
     url: 'https://stacks-node-api.mainnet.stacks.co',
+    // TOREMOVE
+    // url: 'https://stacks-node-api-microblocks.stacks.co'
     name: 'Mainnet',
     chainId: ChainID.Mainnet,
   },
   testnet: {
-    url: 'https://stacks-node-api.testnet.stacks.co',
+    url: 'https://stacks-node-api-microblocks.testnet.stacks.co',
     name: 'Testnet',
     chainId: ChainID.Testnet,
   },
