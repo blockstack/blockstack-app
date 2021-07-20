@@ -1,7 +1,7 @@
 import React from 'react';
 import { Flex, Box } from '@stacks/ui';
-import { BlockstackMini } from '../vector';
-import { buildEnterKeyEvent } from '../link';
+import { BlockstackMini } from './vector';
+import { buildEnterKeyEvent } from './link';
 
 const onClick = () => {
   typeof window !== 'undefined' && window.open('https://blockstack.org', '_blank');
