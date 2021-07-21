@@ -9,10 +9,30 @@ import {
   FeesApi,
 } from '@stacks/blockchain-api-client';
 import { fetcher } from '@common/api/wrapped-fetch';
+import { MICROBLOCKS_ENABLED } from '@common/constants';
+import type { Middleware, RequestContext } from '@stacks/blockchain-api-client';
+
+// Used to display microblock, this passes unanchored=true to the search param
+const unanchoredMiddleware: Middleware = {
+  pre: (context: RequestContext) => {
+    const url = new URL(context.url);
+    url.searchParams.set('unanchored', 'true');
+    return Promise.resolve({
+      init: context.init,
+      url: url.toString(),
+    });
+  },
+};
 
 export const apiClientConfiguration = atom<Configuration>(get => {
   const network = get(currentNetworkState);
-  return new Configuration({ basePath: network.url, fetchApi: fetcher });
+  const middleware: Middleware[] = [];
+  if (MICROBLOCKS_ENABLED) middleware.push(unanchoredMiddleware);
+  return new Configuration({
+    basePath: network.url,
+    fetchApi: fetcher,
+    middleware,
+  });
 });
 
 export const smartContractClientState = atom<SmartContractsApi>(get => {
