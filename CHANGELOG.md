@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.12.3
+
+### Patch Changes
+
+- [#1456](https://github.com/blockstack/stacks-wallet-web/pull/1456) [`fa37093c`](https://github.com/blockstack/stacks-wallet-web/commit/fa37093c987af77e78dca2a49042f8a9e2e1aa30) Thanks [@beguene](https://github.com/beguene)! - Some text are displayed with font-feature ss01 on, some off. This removes all those font-features to keep the font display consistent across pages.
+
+* [#1468](https://github.com/blockstack/stacks-wallet-web/pull/1468) [`a8abb466`](https://github.com/blockstack/stacks-wallet-web/commit/a8abb466d73bb12488d55d8eb89e0135a8b2c4bd) Thanks [@aulneau](https://github.com/aulneau)! - This fixes a bug where the principal contained in a postcondition would be incorrectly changed when it was a contract principal.
+
+- [#1448](https://github.com/blockstack/stacks-wallet-web/pull/1448) [`45e7d207`](https://github.com/blockstack/stacks-wallet-web/commit/45e7d20752d75f459c21a898032da73f9daeff98) Thanks [@aulneau](https://github.com/aulneau)! - This update attempts to fix when sometimes network requests fail due to a CORS related issues. Additionally, this fixes a runtime react key warning.
+
 ## 2.12.2
 
 ### Patch Changes
