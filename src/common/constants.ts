@@ -18,6 +18,7 @@ export const KEBAB_REGEX = /[A-Z\u00C0-\u00D6\u00D8-\u00DE]/g;
 
 export const POPUP_WIDTH = 442;
 export const POPUP_HEIGHT = 646;
+export const MICROBLOCKS_ENABLED = true;
 
 export const SIP_010 = {
   mainnet: {
